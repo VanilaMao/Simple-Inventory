@@ -1,5 +1,3 @@
-const InventoryItem = require('../models/inventory-item.model');
-const Bucket = require('./bucket.result');
 var inventoryDB = require('./inventory.db');
 const utils = require('../utils/random');
 
@@ -59,7 +57,7 @@ describe('test inventory DB functions', () => {
             expect(result.buckets[0].value).toEqual(2019);
             expect(result.buckets[0].purchasePrice).toEqual(400);
         });
-        
+
         it('should return correct lookup result',()=>{
             items.map(item=>inventoryDB.save(item));
             const result = inventoryDB.lookup('456');
