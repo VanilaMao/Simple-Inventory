@@ -15,7 +15,7 @@ router.get("/inventory/:vin", (req, res,next)=>{
     const {vin} = req.params;
     var item = db.getInventory(vin);
     if(item){
-        res.send();
+        res.send(item);
     }else{
         res.status(404).send(`Vin: ${vin} Not found`);
     }     
