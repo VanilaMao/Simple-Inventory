@@ -1,10 +1,11 @@
 import actionTypes from '../action-types';
 import Inventory from '../../models/inventory.model';
+import InventoryTreeNode from '../../models/inventory-tree.model';
 const initialState = {
     inventories:[],
     isLoadingInventory: false,
     isLoadingAggregation: false,
-    buckets: [],
+    treeNode: {},
     searchResult: {}
 }
 
@@ -26,11 +27,12 @@ const reducer = (state=initialState,action)=>{
                 ...state,
                 isLoadingAggregation: true
             }
-        case actionTypes.AGGREGATE_INVENTORIES_LOADED:screenLeft
+        case actionTypes.AGGREGATE_INVENTORIES_LOADED:
+            console.log(new InventoryTreeNode(action.payload.buckets))
             return {
                 ...state,
                 isLoadingAggregation: false,
-                buckets: action.payload.items.map()
+                treeNode: new InventoryTreeNode(action.payload.buckets)
             }
         default:
             return state;

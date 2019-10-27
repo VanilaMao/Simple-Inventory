@@ -29,8 +29,8 @@ export const loadingAggregation = () => ({
     payload: { isLoading: true }
 });
 
-export const aggregationLoaded = (items) => ({
+export const aggregationLoaded = (buckets) => ({
     type: actionTypes.AGGREGATE_INVENTORIES_LOADED,
-    payload: { items }
+    payload: { buckets }
 });
 
