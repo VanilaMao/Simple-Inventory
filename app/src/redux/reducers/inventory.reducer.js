@@ -3,6 +3,7 @@ import Inventory from '../../models/inventory.model';
 const initialState = {
     inventories:[],
     isLoadingInventory: false,
+    isLoadingAggregation: false,
     buckets: [],
     searchResult: {}
 }
@@ -19,6 +20,17 @@ const reducer = (state=initialState,action)=>{
             return {
                 ...state,
                 isLoadingInventory: true
+            }
+        case actionTypes.LOADING_AGGREGATE_INVENTORIES:
+            return {
+                ...state,
+                isLoadingAggregation: true
+            }
+        case actionTypes.AGGREGATE_INVENTORIES_LOADED:screenLeft
+            return {
+                ...state,
+                isLoadingAggregation: false,
+                buckets: action.payload.items.map()
             }
         default:
             return state;

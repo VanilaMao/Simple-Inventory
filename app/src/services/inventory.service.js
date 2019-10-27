@@ -1,11 +1,20 @@
 import axios from 'axios';
 import config from '../config';
 
-export const loadInventories = (callBack)=>{
+export const loadInventories = (callback)=>{
     return axios({
         method:'get',
         url: `${config.api}/api/inventories`,
     }).then(response=>{
-        callBack(response.data)
+        callback(response.data)
+    })
+}
+
+export const loadAggregations = (term, callback)=>{
+    return axios({
+        method:'get',
+        url: `${config.api}/api/aggregate/${term}`,
+    }).then(response=>{
+        callback(response.data)
     })
 }

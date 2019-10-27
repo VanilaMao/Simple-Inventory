@@ -70,7 +70,7 @@ function renderItemDetails(item, showDetails) {
                         <Card>
                             <Card.Header as="h5"> Claim History</Card.Header>
                             <ListGroup variant="flush" className="list-group-flush" >
-                                {item.claims.map((claim,index)=><ListGroupItem key={index}>
+                                {item.claims.map((claim, index) => <ListGroupItem key={index}>
                                     <div className="d-flex flex-column">
                                         <span className="">Comapny: {claim.company}</span>
                                         <span className="">Details: {claim.details}</span>
@@ -80,7 +80,6 @@ function renderItemDetails(item, showDetails) {
                         </Card>
                     </ListGroup>
                 </Card>
-
             </ListGroupItem>
         </div>);
 }
