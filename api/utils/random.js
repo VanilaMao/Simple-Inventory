@@ -21,9 +21,15 @@ const randomClaims = (from,to)=>{
     return claims;
 }
 
+const randomMake = ()=>{
+    const makes = ['toyota','honda','ford','gm'];
+    return makes[Math.floor(Math.random()*makes.length)]
+}
+
 module.exports.randomInventory = ()=>{
     return new InventoryItem({
         year:randomNumber(2016,2020),
+        make: randomMake(),
         purchaseValue: randomNumber(100,2000),
         vin:vin.generateVin(),
         claims:randomClaims(1,3)
