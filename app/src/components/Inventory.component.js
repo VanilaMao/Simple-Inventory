@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { loadInventories } from '../redux/actions';
 import {useEffect} from 'react';
+import InventoryCard from './inventory-view';
 const InventoryComponent = ({isLoadingInventory,inventories,loadInventories}) => {
     useEffect(()=>{
         loadInventories();
@@ -15,8 +16,8 @@ function renderInventories(isLoadingInventory,inventories){
     if(isLoadingInventory){
         return 'loading inventories'
     }
-    return (<div>
-        {inventories.map(item=>JSON.stringify(item))}
+    return (<div style={{padding:20}}>
+       <InventoryCard inventories = {inventories}/>
     </div>)
 }
 
