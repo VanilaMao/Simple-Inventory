@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var db = require('../db/db');
+const express = require('express');
+const router = express.Router();
+const db = require('../db/db');
 
 router.get("/inventories", (req, res,next)=>{
     res.send(db.getInventories());
