@@ -8,10 +8,16 @@ app folder contains the front end code, features are:\
 	7. the aggregation tree view show purchase price and count in right side
 
 	
-	technical stack: react 16, redux, react-redux, react-thunk, bootstrap, jest, enzyme
+	tech stack: react 16, redux, react-redux, react-thunk, bootstrap, jest, enzyme
 	
 
 api folder contains the backend code, the implementation details are:\
-   1.
+   1. api.js is route controller to handle http request\
+   2. use array to implement the underlying database, inspired by elastic search
+   3. inventory records are auto generated 
+   
+   ```
+   tech stack: node.js, express.js, jest
+   ```
 	
 	
