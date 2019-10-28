@@ -14,7 +14,7 @@ app folder contains the front end code, features are:\
 
 ```
 
-Thinkings and things needs improvement: 
+Thinkings and things need improvement: 
   1. the treebeard component is very difficult to customize, tried couple of hours to adjust css, 
     but it loooks like an heavy css overwriting is needed. probably an alternative should be introduced
   2. It is incentive to treat 'lookup by' vin as keyword searching and treat loading inventory 
@@ -24,6 +24,10 @@ Thinkings and things needs improvement:
   4. can use redux-saga to replace redux-thunk to make code more readable
   5. need more unit tests of the components
 ```
+```run and test:
+      git clone the repo and goto to the app folder, 'npm install' first and then 'npm start' to start the sevice, 
+      'npm test' will trigger unit tests.
+   ```
 
 
 api folder contains the backend code, the implementation details are:
@@ -34,5 +38,15 @@ api folder contains the backend code, the implementation details are:
    ```
    tech stack: node.js, express.js, jest
    ```
-	
+   ```
+   Thinkings and things need improvemnt
+    1. used array and maintained an index table inside to simulate basic features of databse, it is just for assignment purpose
+      ,the database part should be replaced by mongoDB, elastic or elastic+mangoDB
+    2. if scalability is introduced, backend probably need to be switched to Java tech stack
+   ```
+   ```run and test:
+      git clone the repo and goto to the api folder, 'npm install' first and then 'npm start' to start the sevice, 
+      'npm test' will trigger unit tests.
+   ```
+   
 	
