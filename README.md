@@ -9,7 +9,15 @@ app folder contains the front end code, features are:\
 
 	
 	tech stack: react 16, redux, react-redux, react-thunk, bootstrap, jest, enzyme
-	
+
+
+
+```
+
+Thinkings and things needs improvement: 
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
+```
+
 
 api folder contains the backend code, the implementation details are:
    1. api.js is route controller to handle http request
