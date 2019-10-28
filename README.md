@@ -9,9 +9,9 @@
  6. can aggreagte different results by selecting terms such as year, model or make.
  7. the aggregation tree view show purchase price and count in right side
 
-	
+```	
 tech stack: react 16, redux, react-redux, react-thunk, bootstrap, jest, enzyme
-
+```
 ```
 
 Thinkings and things need improvement: 
