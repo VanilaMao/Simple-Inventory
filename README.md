@@ -16,11 +16,11 @@ app folder contains the front end code, features are:\
 
 Thinkings and things needs improvement: 
   1. the treebeard component is very difficult to customize, tried couple of hours to adjust css, 
-  but it loooks like an heavy css overwriting is needed. probably an alternative should be introduced
+    but it loooks like an heavy css overwriting is needed. probably an alternative should be introduced
   2. It is incentive to treat 'lookup by' vin as keyword searching and treat loading inventory 
-  list as seraching without keyword, so these two are combined into the same inventories section.
+    list as seraching without keyword, so these two are combined into the same inventories section.
   3. It is possible to make aggregation results in the left nav of the search section, 
-  it will be very useful for user to categorize and navigate the search result
+    it will be very useful for user to categorize and navigate the search result
   4. can use redux-saga to replace redux-thunk to make code more readable
   5. need more unit tests of the components
 ```
