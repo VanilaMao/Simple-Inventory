@@ -7,7 +7,7 @@ app folder contains the front end code, features are:\
 	6. can aggreagte different results by selecting terms such as year, model or make.\
 	7. the aggregation tree view show purchase price and count in right side
 	
-	technical stacks: react 16, redux, react-redux, react-thunk, bootstrap
+	technical stack: react 16, redux, react-redux, react-thunk, bootstrap
 	
 api folder contains 	
 	
