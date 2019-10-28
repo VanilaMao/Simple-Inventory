@@ -40,8 +40,8 @@ api folder contains the backend code, the implementation details are:
    ```
    ```
    Thinkings and things need improvemnt
-    1. used array and maintained an index table inside to simulate basic features of databse, it is just for assignment purpose
-      ,the database part should be replaced by mongoDB, elastic or elastic+mangoDB
+    1. used array and maintained an index table inside to simulate basic features of databse,
+    it is just for assignment purpose ,the database part should be replaced by mongoDB, elastic or elastic+mangoDB
     2. if scalability is introduced, backend probably need to be switched to Java tech stack
    ```
    ```run and test:
