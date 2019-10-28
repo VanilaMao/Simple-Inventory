@@ -5,7 +5,8 @@ const initialState = {
     inventories:[],
     isLoadingInventory: false,
     isLoadingAggregation: false,
-    treeNode: {}
+    treeNode: {},
+    aggregateTerm: ''
 }
 
 const reducer = (state=initialState,action)=>{
@@ -24,7 +25,8 @@ const reducer = (state=initialState,action)=>{
         case actionTypes.LOADING_AGGREGATE_INVENTORIES:
             return {
                 ...state,
-                isLoadingAggregation: true
+                isLoadingAggregation: true,
+                aggregateTerm: action.payload.term
             }
         case actionTypes.AGGREGATE_INVENTORIES_LOADED:
             return {

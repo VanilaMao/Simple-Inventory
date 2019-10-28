@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import InventoryCard from './inventory-view';
 import AggregationView from './aggregate-view';
 const InventoryComponent = ({ isLoadingInventory,  loadInventories,inventories, 
-    isLoadingAggregation,loadAggregations,treeNode,searchByVin }) => {
+    isLoadingAggregation,loadAggregations,treeNode,searchByVin,term}) => {
     useEffect(() => {
         loadInventories();
         loadAggregations('year')
@@ -19,7 +19,7 @@ const InventoryComponent = ({ isLoadingInventory,  loadInventories,inventories,
                     loadInventories();
                 }
             })}
-            {renderAggregations(isLoadingAggregation,loadAggregations,treeNode)}         
+            {renderAggregations(isLoadingAggregation,loadAggregations,treeNode,term)}         
         </div>
     )
 };
@@ -33,12 +33,12 @@ function renderInventories(isLoadingInventory, inventories, search) {
     </div>)
 }
 
-function renderAggregations(isLoadingAggregation,loadAggregations, treeNode) {
+function renderAggregations(isLoadingAggregation,loadAggregations, treeNode,term) {
     if (isLoadingAggregation) {
         return 'loading aggegation results'
     }
     return (<div style={{ padding: 20 }}>
-        <AggregationView treeNode={treeNode} loadAggregations={loadAggregations} />
+        <AggregationView treeNode={treeNode} loadAggregations={loadAggregations} aggregationTerm={term}/>
     </div>)
 }
 
@@ -48,7 +48,8 @@ const mapstateToProps = state => {
         isLoadingInventory: state.inventory.isLoadingInventory,
         inventories: state.inventory.inventories,
         isLoadingAggregation: state.inventory.isLoadingAggregation,
-        treeNode: adjustTreeNode(state.inventory.treeNode)
+        treeNode: adjustTreeNode(state.inventory.treeNode),
+        term: state.inventory.aggregateTerm
     }
 };
 

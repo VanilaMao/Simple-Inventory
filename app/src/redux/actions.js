@@ -11,7 +11,7 @@ export const loadInventories = () => dispatch => {
 };
 
 export const loadAggregations = (term) => dispatch => {
-    dispatch(loadingAggregation());
+    dispatch(loadingAggregation(term));
     return _loadAggregations(term, buckets => dispatch(aggregationLoaded(buckets)))
 };
 
@@ -23,7 +23,6 @@ export const searchByVin = (vin)=> dispatch => {
 
 export const loadingInventory = () => ({
     type: actionTypes.LOADING_INVENTORIES,
-    payload: { isLoading: true }
 });
 
 export const inventoriesLoaded = (items) => ({
@@ -31,9 +30,9 @@ export const inventoriesLoaded = (items) => ({
     payload: { items }
 });
 
-export const loadingAggregation = () => ({
+export const loadingAggregation = (term) => ({
     type: actionTypes.LOADING_AGGREGATE_INVENTORIES,
-    payload: { isLoading: true }
+    payload: { term }
 });
 
 export const aggregationLoaded = (buckets) => ({
@@ -45,7 +44,6 @@ export const searchByVinSucess = (item)=>({
     type: actionTypes.SEARCH_INVENTORY_BY_VIN_SUCCESS,
     payload: { item }
 });
-
 
 export const searchByVinNoResult = (message)=>({
     type: actionTypes.SEARCH_INVENTORY_NO_RESULT,

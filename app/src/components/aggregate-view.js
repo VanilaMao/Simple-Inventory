@@ -15,12 +15,12 @@ const Header = ({ node}) => {
     );
 };
 
-const AggregationView = ({ treeNode, loadAggregations }) => {
+const AggregationView = ({ treeNode, loadAggregations,aggregationTerm }) => {
     const [data, setData] = useState(treeNode);
-    const [term, setTerm] = useState('year');
+    const [term, setTerm] = useState(aggregationTerm);
     const [cursor, setCursor] = useState(false);
-    const onClickDropdown = (termName,setCallback)=>{
-        setCallback(termName);
+    const onClickDropdown = (termName)=>{
+        setTerm(termName);
         loadAggregations(termName);
     }
     const onToggle = (node, toggled) => {
@@ -47,9 +47,9 @@ const AggregationView = ({ treeNode, loadAggregations }) => {
                         {term}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                        <Dropdown.Item onClick={()=>onClickDropdown('year',setTerm)}>Year</Dropdown.Item>
-                        <Dropdown.Item onClick={()=>onClickDropdown('make',setTerm)}>Make</Dropdown.Item>
-                        <Dropdown.Item onClick={()=>onClickDropdown('model',setTerm)}>Model</Dropdown.Item>
+                        <Dropdown.Item onClick={()=>onClickDropdown('year')}>Year</Dropdown.Item>
+                        <Dropdown.Item onClick={()=>onClickDropdown('make')}>Make</Dropdown.Item>
+                        <Dropdown.Item onClick={()=>onClickDropdown('model')}>Model</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
             </Card.Body>
