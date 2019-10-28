@@ -1,37 +1,44 @@
 const vin = require('vin-generator');
 const InventoryItem = require('../models/inventory-item.model');
-const details =["run into a lake", "hit a deer", "drive in one way revservely"];
-const companies =["Geico","progressive","triple a","state farm"];
+const details = ["run into a lake", "hit a deer", "drive in one way revservely"];
+const companies = ["Geico", "progressive", "triple a", "state farm"];
 
-const randomNumber = (from,to)=>{
+const randomNumber = (from, to) => {
     return Math.floor(Math.random() * (from - to + 1)) + to;
 }
-const randomClaim = ()=>{
-    return {
-        details:details[randomNumber(0,details.length-1)],
-        company: companies[randomNumber(0,companies.length-1)]
-    }
-}
 
-const randomClaims = (from,to)=>{
+const randomClaims = (from, to) => {
     var claims = [];
-    for(var i=from; i<randomNumber(to,from)+1;i++ ){
-        claims.push(randomClaim());
+    for (var i = from; i < randomNumber(to, from) + 1; i++) {
+        claims.push({
+            details: details[Math.floor(Math.random() *details.length)],
+            company: companies[i]
+        })
     }
     return claims;
 }
 
-const randomMake = ()=>{
-    const makes = ['toyota','honda','ford','gm'];
-    return makes[Math.floor(Math.random()*makes.length)]
+const randomMakeModel = () => {
+    const makes = [
+        { make: 'toyota', models: ["rav4","camry"] },
+        { make: 'honda', models: ["civic", "crv"] },
+        { make: 'ford', models: ["explorer","crestline", "parklane"] },
+        { make: 'gmc', models: ["canyon", "acadia", "terrain"] }];
+    var makeModel = makes[Math.floor(Math.random() * makes.length)];
+    return {
+        make: makeModel.make,
+        model: makeModel.models[Math.floor(Math.random() * makeModel.models.length)]
+    }
 }
 
-module.exports.randomInventory = ()=>{
+module.exports.randomInventory = () => {
+    var makeModel = randomMakeModel();
     return new InventoryItem({
-        year:randomNumber(2016,2020),
-        make: randomMake(),
-        purchaseValue: randomNumber(100,2000),
-        vin:vin.generateVin(),
-        claims:randomClaims(1,3)
+        year: randomNumber(2016, 2020),
+        make: makeModel.make,
+        model: makeModel.model,
+        purchaseValue: randomNumber(100, 2000),
+        vin: vin.generateVin(),
+        claims: randomClaims(0, 3)
     });
 }
