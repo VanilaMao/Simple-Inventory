@@ -23,6 +23,7 @@ Thinkings and things need improvement:
     it will be very useful for user to categorize and navigate the search result
   4. can use redux-saga to replace redux-thunk to make code more readable
   5. need more unit tests of the components
+  6. page search is necessary if search result is too big
 ```
 ```
 Run and test:
@@ -52,9 +53,10 @@ Run and test:
       start the sevice, 'npm test' will trigger unit tests.
    ```
    
-# Thinkings about qustion 6 
+# Thinkings about question 6 
 ```
  How would design a data structure/method to provide sorted lists of card data structures by property field?
+  ideally, maybe tree sort or heap sort are the choice for sorting big amount of data such as millions records
  ```
 
 
