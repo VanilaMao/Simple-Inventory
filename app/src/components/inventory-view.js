@@ -85,8 +85,8 @@ function renderItemDetails(item, showDetails) {
                             <ListGroup variant="flush" className="list-group-flush" >
                                 {item.claims.map((claim, index) => <ListGroupItem key={index}>
                                     <div className="d-flex flex-column">
-                                        <span className="">Comapny: {claim.company}</span>
-                                        <span className="">Details: {claim.details}</span>
+                                        <span >Company: {claim.company}</span>
+                                        <span >Details: {claim.details}</span>
                                     </div>
                                 </ListGroupItem>)}
                             </ListGroup>

@@ -8,7 +8,7 @@ const Header = ({ node}) => {
         <div className="d-flex" >
             {node.name}
             <div className="ml-auto">
-                purchasePrice: {node.purchasePrice}$, count: {node.count}
+                Purchase Price: {node.purchasePrice}$, Count: {node.count}
             </div>
         </div>
 
