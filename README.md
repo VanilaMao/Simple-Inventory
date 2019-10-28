@@ -57,7 +57,7 @@ Run and test:
 ```
 --- How would design a data structure/method to provide sorted lists of card data structures by property field?
  
-  Ideally, maybe  heap sort are the choice for sorting big amount of data such as millions records
+  Ideally, maybe  heap sort is the choice for sorting big amount of data such as millions records
  ```
 
 
