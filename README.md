@@ -24,7 +24,8 @@ Thinkings and things need improvement:
   4. can use redux-saga to replace redux-thunk to make code more readable
   5. need more unit tests of the components
 ```
-```run and test:
+```
+run and test:
       git clone the repo and goto to the app folder, 'npm install' first and then 'npm start' to start the sevice, 
       'npm test' will trigger unit tests.
    ```
@@ -44,7 +45,8 @@ api folder contains the backend code, the implementation details are:
     it is just for assignment purpose ,the database part should be replaced by mongoDB, elastic or elastic+mangoDB
     2. if scalability is introduced, backend probably need to be switched to Java tech stack
    ```
-   ```run and test:
+   ```
+   run and test:
       git clone the repo and goto to the api folder, 'npm install' first and then 'npm start' to start the sevice, 
       'npm test' will trigger unit tests.
    ```
