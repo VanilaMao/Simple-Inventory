@@ -26,7 +26,7 @@ Thinkings and things need improvement:
   5. need more unit tests of the components
 ```
 ```
-run and test:
+Run and test:
       git clone the repo and goto to the app folder, 'npm install' first and then 'npm start' to 
       start the sevice, 'npm test' will trigger unit tests.
    ```
@@ -48,7 +48,7 @@ run and test:
     2. if scalability is introduced, backend probably need to be switched to Java tech stack
    ```
    ```
-   run and test:
+   Run and test:
       git clone the repo and goto to the api folder, 'npm install' first and then 'npm start' to 
       start the sevice, 'npm test' will trigger unit tests.
    ```
