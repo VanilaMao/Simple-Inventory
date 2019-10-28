@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Card, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
+import { Card, ListGroup, ListGroupItem, Button,InputGroup,FormControl} from 'react-bootstrap';
 
-const InventoryCard = ({ inventories }) => {
+const InventoryCard = ({ inventories,search }) => {
     const [dispaly, setDisplay] = useState(false);
+    const [vinNumber,setVinNumber] = useState('');
     const [showDetails, setShowDetails] = useState(createShowDetailsObject(inventories));
-    return (<div>
+    return ( <div>
         <Card>
             <Card.Header as="h5">Inventrories</Card.Header>
             <Card.Body>
@@ -12,19 +13,31 @@ const InventoryCard = ({ inventories }) => {
                 <Card.Text>
                     better description in the future
                 </Card.Text>
+                <InputGroup className="mb-3">
+                    <InputGroup.Prepend>
+                        <InputGroup.Text id="basic-addon1">*</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl
+                        placeholder="Please Input a Vin or empty string to search "
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                        onChange={e=>setVinNumber(e.target.value)}
+                    />
+                    <Button className="ml-1" onClick={()=>search(vinNumber)}>Search</Button>
+                </InputGroup>
                 <Button variant="primary" onClick={() => setDisplay(true)}>Show</Button>
                 <Button variant="secondary" onClick={() => setDisplay(false)} className="ml-3">Hide</Button>
             </Card.Body>
-            {dispaly ?
+            {dispaly?
                 <ListGroup variant="flush" className="list-group-flush" >
-                    {inventories.map(item => !showDetails[item.vin] ? renderItemSummary(item, () => setShowDetails({
+                    {inventories.length!==0? inventories.map(item => !showDetails[item.vin] ? renderItemSummary(item, () => setShowDetails({
                         ...showDetails,
                         [item.vin]: true
                     }))
                         : renderItemDetails(item, () => setShowDetails({
                             ...showDetails,
                             [item.vin]: false
-                        })))}
+                        }))):'No result, please input a valid vin number or check with adminstration!'}
                 </ListGroup> : null}
         </Card>
     </div>)

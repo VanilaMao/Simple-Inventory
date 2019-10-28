@@ -1,7 +1,9 @@
 export default class InventoryTreeNode {
     constructor(input){
-        this.key = input.value;
-        this.label = input.purchasePrice;
-        this.nodes = input.buckets.map(bucket=>new InventoryTreeNode(bucket));
+        this.id = input.value;
+        this.name = input.value;
+        this.count = input.count;
+        this.purchasePrice = input.purchasePrice;
+        this.children = input.buckets.map(bucket=>new InventoryTreeNode(bucket));
     }
 }

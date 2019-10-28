@@ -5,8 +5,7 @@ const initialState = {
     inventories:[],
     isLoadingInventory: false,
     isLoadingAggregation: false,
-    treeNode: {},
-    searchResult: {}
+    treeNode: {}
 }
 
 const reducer = (state=initialState,action)=>{
@@ -28,11 +27,22 @@ const reducer = (state=initialState,action)=>{
                 isLoadingAggregation: true
             }
         case actionTypes.AGGREGATE_INVENTORIES_LOADED:
-            console.log(new InventoryTreeNode(action.payload.buckets))
             return {
                 ...state,
                 isLoadingAggregation: false,
                 treeNode: new InventoryTreeNode(action.payload.buckets)
+            }
+        case actionTypes.SEARCH_INVENTORY_BY_VIN_SUCCESS:
+            return {
+                ...state,
+                isLoadingInventory: false,
+                inventories: [new Inventory(action.payload.item)]
+            }
+        case actionTypes.SEARCH_INVENTORY_NO_RESULT:
+            return{
+                ...state,
+                isLoadingInventory: false,
+                inventories: []
             }
         default:
             return state;
