@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Treebeard, decorators } from 'react-treebeard';
 import { Card,Dropdown } from 'react-bootstrap';
-
+import { Div} from 'react-treebeard/dist/components/common/index';
+import styles from './treebeard.style';
 
 const Header = ({ node}) => {
     return (
@@ -53,8 +54,10 @@ const AggregationView = ({ treeNode, loadAggregations,aggregationTerm }) => {
                     </Dropdown.Menu>
                 </Dropdown>
             </Card.Body>
-            <Treebeard data={data} onToggle={onToggle}
-                decorators={{ ...decorators, Header }} />
+            <Div style={styles.component}>
+                <Treebeard data={data} onToggle={onToggle}
+                    decorators={{ ...decorators, Header }} />
+            </Div>
         </Card>
     )
 }
