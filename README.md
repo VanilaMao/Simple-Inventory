@@ -52,5 +52,9 @@ Run and test:
       start the sevice, 'npm test' will trigger unit tests.
    ```
    
-# How would design a data structure/method to provide sorted lists of card data structures by property field?
+# Thinkings about qustion 6 
+```
+ How would design a data structure/method to provide sorted lists of card data structures by property field?
+ ```
+
 
