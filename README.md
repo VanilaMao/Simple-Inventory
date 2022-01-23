@@ -51,13 +51,5 @@ Run and test:
    Run and test:
       git clone the repo and goto to the api folder, 'npm install' first and then 'npm start' to 
       start the sevice, 'npm test' will trigger unit tests.
-   ```
-   
-# Thinkings about question 6 
-```
---- How would design a data structure/method to provide sorted lists of card data structures by property field?
- 
-  Ideally, maybe  heap sort is the choice for sorting big amount of data such as millions records
- ```
 
 
